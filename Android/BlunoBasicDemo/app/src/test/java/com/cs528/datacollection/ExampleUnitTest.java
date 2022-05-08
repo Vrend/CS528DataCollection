@@ -1,4 +1,4 @@
-package com.dfrobot.angelo.blunobasicdemo;
+package com.cs528.datacollection;
 
 import org.junit.Test;
 

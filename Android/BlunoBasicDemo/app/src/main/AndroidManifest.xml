@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dfrobot.angelo.blunobasicdemo">
+    package="com.cs528.datacollection">
 
 
     <!-- Declare this required feature if you want to make the app available to BLE-capable
@@ -29,7 +29,7 @@ PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE) -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="com.dfrobot.angelo.blunobasicdemo.BluetoothLeService" android:enabled="true"/>
+        <service android:name="com.cs528.datacollection.BluetoothLeService" android:enabled="true"/>
 
     </application>
 

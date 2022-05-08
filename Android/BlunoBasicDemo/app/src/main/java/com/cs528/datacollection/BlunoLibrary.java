@@ -1,4 +1,4 @@
-package com.dfrobot.angelo.blunobasicdemo;
+package com.cs528.datacollection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,7 +36,7 @@ public abstract  class BlunoLibrary  extends Activity{
 
 	private Context mainContext=this;
 
-	//需要的申请权限
+
 	private  String [] mStrPermission = {
 			Manifest.permission.ACCESS_FINE_LOCATION
 	};
@@ -296,7 +295,7 @@ public abstract  class BlunoLibrary  extends Activity{
 		@Override
         public void onReceive(Context context, Intent intent) {
         	final String action = intent.getAction();
-            System.out.println("mGattUpdateReceiver->onReceive->action="+action);
+//            System.out.println("mGattUpdateReceiver->onReceive->action="+action);
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
             	mHandler.removeCallbacks(mConnectingOverTimeRunnable);
@@ -341,7 +340,7 @@ public abstract  class BlunoLibrary  extends Activity{
 				}
             	
             
-            	System.out.println("displayData "+intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+//            	System.out.println("displayData "+intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
             	
 //            	mPlainProtocol.mReceivedframe.append(intent.getStringExtra(BluetoothLeService.EXTRA_DATA)) ;
 //            	System.out.print("mPlainProtocol.mReceivedframe:");
@@ -598,7 +597,7 @@ public abstract  class BlunoLibrary  extends Activity{
 	}
 
 	/**
-	 * 判断请求单个权限
+	 * 锟叫讹拷锟斤拷锟襟单革拷权锟斤拷
 	 * @param permissions
 	 * @return
 	 */
@@ -611,7 +610,7 @@ public abstract  class BlunoLibrary  extends Activity{
 	}
 
 	/**
-	 * 判断请求权限组
+	 *
 	 * @return
 	 */
 	protected boolean checkPermissionsAll(){
@@ -626,7 +625,7 @@ public abstract  class BlunoLibrary  extends Activity{
 	}
 
 	/**
-	 * 请求单个权限
+	 *
 	 * @param mPermissions
 	 * @param requestCode
 	 */
@@ -637,7 +636,7 @@ public abstract  class BlunoLibrary  extends Activity{
 	}
 
 	/**
-	 *请求权限
+	 *锟斤拷锟斤拷权锟斤拷
 	 * @param requestCode
 	 */
 	protected void requestPermissionAll(int requestCode, OnPermissionsResult permissionsResult){
@@ -652,7 +651,7 @@ public abstract  class BlunoLibrary  extends Activity{
 	    		for(int i = 0; i < grantResults.length; i++){
 	    			if(grantResults[i] == PackageManager.PERMISSION_DENIED){
 	    				System.out.println(permissions[i]);
-	    				//如果有失败
+
                         mPerNoList.add(permissions[i]);
 					}
 				}
